@@ -32,13 +32,15 @@ public class Problem10 {
 		while(!isPrime(prime)){
 			prime++;
 		}
-		
 	}
 	
 	private boolean isPrime(long pNumber){
 		boolean check = false;
 		long n = pNumber;
 		for(long i : primes ){
+			if(i > Math.sqrt(n)){
+				break;
+			}
 			while (n%i == 0) {
 				n /= i;
 				break;
@@ -47,8 +49,6 @@ public class Problem10 {
 		if(pNumber == n){
 			check = true;
 		}
-	
 		return check;
 	}
-
 }
