@@ -39,6 +39,9 @@ public class Problem7 {
 		boolean check = false;
 		long n = pNumber;
 		for (int i = 0; primes.get(i) <= n/2; i++) {
+			if(i > Math.sqrt(n)){
+				break;
+			}
 			while (n % primes.get(i) == 0) {
 				n /= primes.get(i);
 				break;
