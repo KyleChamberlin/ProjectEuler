@@ -1,103 +1,82 @@
 package projectEuler;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.NavigableSet;
-import java.util.Set;
-
 public class Problem51 {
 
-	long answer = 0;
-	long prime = 2;
-	Set<Long> primes = new HashSet<Long>();
-	NavigableSet<Long> primes1 = new NavigableSet<Long>();
-	/**
-	 * 
-	 * @param args
-	 */
-	public Problem51(){
-		while (prime < 10000){
-			nextPrime();
-		}
-		int most = 0;
-		while(most < 8){
-			nextUnCheckedPrime();
-			
-			int nif = numberInFamily(prime);
-			if(nif > most){
-				most = nif;
-			}
+	int answer = 0;
+	int primeIndex = 1;
+	int prime = 2;
+	int limit = 2000000001;
+	int sieveBound = (limit - 1) /2;
+	double crosslimit = (Math.sqrt(limit) - 1) / 2;
+	boolean[] sieve = new boolean[sieveBound];
 
+	public Problem51(){
+		primeSieve();
+		System.out.println("finished Sieving");
+		int most = 0;
+		int mine = 1;
+		for (boolean prime : sieve){
+			if(!prime){
+				System.out.println(((mine*2) + 1));
+			}
+			mine++;
+		}
+		while(most < 8){
+			nextPrime();
+			int temp = numberInFamily(prime);
+			if(temp > most){
+				most = temp;
+			}
 		}
 		answer=prime;
-		
-		
-		
 	}
 		
-	public long getAnswer(){
+	public int getAnswer(){
 		return answer;
 	}
 	
-	private void nextPrime() {
-		primes.add(prime);
-		primes1.add(prime);
-		prime++;
-		while(!isPrime(prime)){
-			prime++;
-		}
-		
-	}
-	
-	private void nextUnCheckedPrime() {
-		primes.add(prime);
-		primes1.add(prime);
-		prime++;
-		while(!primes.contains(prime) && !isPrime(prime)){
-			prime++;
-		}
-		
-	}
-	
-	private boolean isPrime(long pN){
-		boolean check = true;
-		for (int i = 0; (primes1.get(i) <= Math.sqrt(pN)) ; i++) {
-			if (pN % primes1.get(i) == 0){
-				check = false;
-				break;
+	private void primeSieve(){
+		for( int i = 1; i < crosslimit; i++){
+			if(!sieve[i]){
+				for(int j = (2*i)*(i+1); j < sieveBound; j += (2*i)+1){
+					sieve[j]=true;
+				}
 			}
 		}
-
-		return check;
 	}
 	
-	private int numberInFamily(long pN){
+	private void nextPrime() {
+		primeIndex++;
+		while(sieve[primeIndex]){
+			primeIndex++;
+		}
+		prime = primeIndex*2 +1;
+		
+	}
+
+	private int numberInFamily(int pN){
 		int maxCount = 0;
 		int count = 0;
-		for(long p1 = 10; p1 < pN; p1*=10){
-			long digit1 = (pN%(p1*10)-pN%(p1)) / p1;
-			for(long p2 = 10;p2 < p1; p2*=10){
-				count = 0;
-				
-				long digit2 = (pN%(p2*10)-pN%(p2)) / p2;
-				long start = (digit1>digit2 ? digit1 : digit2);
-				for(long num = 0; digit1 == digit2 && digit2 < 3L && num + start < 10 ;num++){
-					long numToAdd = (num*p1) + ((num)*p2);
-					long check = pN+numToAdd;
-					if(check != pN && isPrime(check)){
-						System.out.print(""+ check + " ");
-						primes.add(pN+num);
+		for(int p1 = 10; p1 < pN; p1*=10){
+			int digit1 = (pN%(p1*10)-pN%(p1)) / p1;
+			for(int p2 = 10;p2 < p1; p2*=10){
+				count = 0;				
+				int digit2 = (pN%(p2*10)-pN%(p2)) / p2;
+				int start = (digit1>digit2 ? digit1 : digit2);
+				for(int num = 0; digit1 == digit2 && digit2 < 3L && num + start < 10 ;num++){
+					int numToAdd = (num*p1) + ((num)*p2);
+					int check = pN+numToAdd;
+					if(check != pN && !sieve[(int) ((check - 1)/2)]){
+						//System.out.print(""+ check + " ");
 						count++;
 						if(count > maxCount){
 							maxCount = count;
 						}
 					}
 				}
-				System.out.println(" -> "+(count +1));
+				//System.out.println(" -> "+count);
 			}
 		}
 		return maxCount + 1;
-	}
-	
+	}	
 }
