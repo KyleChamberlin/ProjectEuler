@@ -22,7 +22,9 @@ public class Problem51 {
 		int max = primeList.cardinality();
 		while(most < 8 && howmanytimes < max){
 			nextPrime();
-			int temp = numberInFamily(prime);
+			int temp = numberInFamily2(prime);
+			int temp2 = numberInFamily3(prime);
+			temp = (temp>temp2?temp:temp2);
 			if(temp > most){
 				most = temp;
 				answer=prime;
