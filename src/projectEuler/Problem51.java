@@ -1,27 +1,23 @@
 package projectEuler;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Problem51 {
 
 	int answer = 0;
 	int primeIndex = 1;
 	int prime = 2;
-	int limit = 2000000001;
+	int limit = 100000001;
 	int sieveBound = (limit - 1) /2;
 	double crosslimit = (Math.sqrt(limit) - 1) / 2;
-	boolean[] sieve = new boolean[sieveBound];
+	List<Boolean> sieve = new ArrayList<Boolean>();
 
 	public Problem51(){
 		primeSieve();
 		System.out.println("finished Sieving");
 		int most = 0;
-		int mine = 1;
-		for (boolean prime : sieve){
-			if(!prime){
-				System.out.println(((mine*2) + 1));
-			}
-			mine++;
-		}
-		while(most < 8){
+		while(most < 8 && primeIndex<sieveBound-1){
 			nextPrime();
 			int temp = numberInFamily(prime);
 			if(temp > most){
@@ -37,9 +33,9 @@ public class Problem51 {
 	
 	private void primeSieve(){
 		for( int i = 1; i < crosslimit; i++){
-			if(!sieve[i]){
+			if(!sieve.get(i)){
 				for(int j = (2*i)*(i+1); j < sieveBound; j += (2*i)+1){
-					sieve[j]=true;
+					sieve.set(i)=true;
 				}
 			}
 		}
@@ -47,10 +43,11 @@ public class Problem51 {
 	
 	private void nextPrime() {
 		primeIndex++;
-		while(sieve[primeIndex]){
+		while(primeIndex <sieveBound && sieve[primeIndex]){
 			primeIndex++;
 		}
 		prime = primeIndex*2 +1;
+		//System.out.println(prime);
 		
 	}
 
@@ -66,7 +63,7 @@ public class Problem51 {
 				for(int num = 0; digit1 == digit2 && digit2 < 3L && num + start < 10 ;num++){
 					int numToAdd = (num*p1) + ((num)*p2);
 					int check = pN+numToAdd;
-					if(check != pN && !sieve[(int) ((check - 1)/2)]){
+					if(((check - 1)/2) < sieveBound && check != pN && !sieve[(int) ((check - 1)/2)]){
 						//System.out.print(""+ check + " ");
 						count++;
 						if(count > maxCount){
