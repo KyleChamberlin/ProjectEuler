@@ -7,7 +7,7 @@ public class Problem51 {
 
 	int answer = 0;
 	int primeIndex = 1;
-	int prime = 2;
+	int prime;
 	int limit = 100000000;
 	BitSet primeList;
 

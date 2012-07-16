@@ -15,7 +15,7 @@ public class ProjectEuler {
      */
     public static void main(String[] args) {
         
-    	Problem51 problem = new Problem51();
+    	Problem2 problem = new Problem2();
         
     	System.out.println(problem.getAnswer());
     

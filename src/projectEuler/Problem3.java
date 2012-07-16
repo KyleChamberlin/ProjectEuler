@@ -1,3 +1,13 @@
+/**Problem 3 from projectEuler.net 
+ * Posted 02 November 2001
+ * Solution by Kyle Chamberlin
+ * Solved 12 July 2012
+ * Problem 3 is stated as :
+ * The prime factors of 13195 are 5, 7, 13 and 29.
+ * 
+ * What is the largest prime factor of the number 600851475143 ?
+ */
+
 package projectEuler;
 
 import java.util.ArrayList;
