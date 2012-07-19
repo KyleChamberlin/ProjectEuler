@@ -11,10 +11,10 @@ public class Problem5 {
 	 * @param args
 	 */
 	public Problem5(){
-		long i = 19L;
+		long i = 20L;
 		while (answer != i){
-			i++;
-			inner : for(int j = 2;j<21;j++){
+			i +=2;
+			inner : for(int j = 3;j<21;j++){
 				if(i%j != 0){
 					break inner;
 				}

@@ -14,12 +14,14 @@ public class ProjectEuler {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
 
-    	Problem2 problem = new Problem2();
+    	long startTime = System.currentTimeMillis();
+    	Problem16 problem = new Problem16();
+    	long endTime = System.currentTimeMillis();
+    	
 
-        
     	System.out.println(problem.getAnswer());
+    	System.out.println((endTime - startTime) + " ms");
     
     }
     
