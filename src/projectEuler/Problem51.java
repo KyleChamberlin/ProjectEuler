@@ -7,7 +7,7 @@ public class Problem51 {
 
 	int answer = 0;
 	int primeIndex = 1;
-	int prime = 2;
+	int prime;
 	int limit = 100000000;
 	BitSet primeList;
 
@@ -70,18 +70,15 @@ public class Problem51 {
 		int count = 0;
 		for(int p1 = 10; p1 < pN; p1*=10){
 			int digit1 = (pN%(p1*10)-pN%(p1)) / p1;
-			for(int p2 = 10;p2 < p1; p2*=10){
+			for(int p2 = 10;digit1 < 3 && p2 < p1; p2*=10){
 				int digit2 = (pN%(p2*10)-pN%(p2)) / p2;
-				for(int p3 = 10; p3 < p2; p3*=10){
+				for(int p3 = 10; digit1 == digit2 && p3 < p2; p3*=10){
 					int digit3 = (pN%(p3*10)-pN%(p3)) / p3;
 					count = 0;				
-					int start = digit1;
-					int[] arrayOfChecks = new int[]{0,0,0,0,0,0,0,0,0,0};
-					for(int num = 0; digit1 == digit2 && digit1 == digit3 && digit2 < 3L && num + start < 10 ;num++){
+					for(int num = 1; digit1 == digit3 && num + digit1 < 10 ;num++){
 						int numToAdd = (num*p1) + ((num)*p2) + (num*p3);
 						int check = pN+numToAdd;
-						arrayOfChecks[num] = check;
-						if(check != pN && isPrime(check)){
+						if(isPrime(check)){
 							count++;
 						}
 					}
