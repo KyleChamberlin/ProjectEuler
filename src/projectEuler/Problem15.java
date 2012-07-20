@@ -15,8 +15,8 @@ public class Problem15 {
 	public int[] bigPower(int pN, int pn){
 		int[] number = new int[(int) Math.ceil(Math.log10(pN)*pn) + 1];
 		java.util.Arrays.fill(number,0);		
-		number[0]=2;
-		for(int n = 1; n < pN; n++){
+		number[0]=pN;
+		for(int n = 1; n < pn; n++){
 			for(int i = 0; i < number.length; i++){
 				number[i] = number[i]*2;
 			}
