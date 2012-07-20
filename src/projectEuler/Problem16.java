@@ -6,34 +6,34 @@ public class Problem16 {
 	int answer = 0;
 
 	public Problem16(){
-		twoPower(1000);
-		answer = sumDigits(a);		
+		answer = sumDigits(bigPower(2,1000));		
 	}
 	
 	public int getAnswer(){
 		return answer;
 	}
 	
-	public void twoPower(int pN){
-		a = new int[(int) Math.ceil(Math.log10(2)*pN) + 1];
-		java.util.Arrays.fill(a,0);		
-		a[0]=2;
-		for(int n = 1; n < pN; n++){
-			for(int i = 0; i < a.length; i++){
-				a[i] = a[i]*2;
+	public int[] bigPower(int pN, int pn){
+		int[] number = new int[(int) Math.ceil(Math.log10(pN)*pn) + 1];
+		java.util.Arrays.fill(number,0);		
+		number[0]=pN;
+		for(int n = 1; n < pn; n++){
+			for(int i = 0; i < number.length; i++){
+				number[i] = number[i]*2;
 			}
-			for(int j=0;j<a.length;j++){
-				if(a[j]>=10){
-					a[j+1]+=(a[j]/10);
-					a[j]=a[j]%10;					
+			for(int j=0;j<number.length;j++){
+				if(number[j]>=10){
+					number[j+1]+=(number[j]/10);
+					number[j]=number[j]%10;					
 				}
 			}
 		}
+		return number;
 	}
 	
 	private int sumDigits(int[] pDigits){
 		int sum = 0;
-		for(int i : a){
+		for(int i : pDigits){
 			sum += i;
 		}
 		return sum;
