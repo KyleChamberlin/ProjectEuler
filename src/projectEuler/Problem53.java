@@ -13,7 +13,6 @@ public class Problem53 {
 		for(int n = 3;n <= 100 ; n++){
 			for (int r = 2; r < n; r++){
 				BigInteger val = nCr(n,r);
-				System.out.println("n=" + n + ", r=" + r +"\nnCr="+ val);
 				if(val.compareTo(check) > 0){
 					count ++;
 				}
@@ -25,9 +24,7 @@ public class Problem53 {
 	private BigInteger nCr(int pN, int pR){
 		BigInteger nFact = factorials.getNfact(pN);
 		BigInteger rFact = factorials.getNfact(pR);
-		BigInteger nMinusRFact = factorials.getNfact((pN-pR));
-		BigInteger denom = rFact.multiply(nMinusRFact);
-		BigInteger comb_BI = nFact.divide(denom);
+		BigInteger comb_BI = nFact.divide(rFact.multiply(factorials.getNfact((pN-pR))));
 		
 		return comb_BI;
 	}
