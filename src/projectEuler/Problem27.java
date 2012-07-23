@@ -15,8 +15,7 @@ public class Problem27 {
 					answer = a * b;
 				}
 			}
-		}
-		
+		}		
 	}
 	
 	private int checkQuad(int pA, int pB){
