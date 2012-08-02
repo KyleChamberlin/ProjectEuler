@@ -12,13 +12,13 @@ public class Problem5 {
 	 */
 	public Problem5(){
 		long i = 20L;
-		while (answer != i){
-			i +=2;
-			inner : for(int j = 3;j<21;j++){
+		while (answer == 0){
+			i +=20;
+			inner : for(int j = 19;j>=11;j--){
 				if(i%j != 0){
 					break inner;
 				}
-				if(j==20){
+				if(j==11){
 					answer = i;
 				}
 			}
