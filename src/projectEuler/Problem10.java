@@ -9,6 +9,7 @@ public class Problem10 {
 
 	long answer = 0;
 	long prime = 2;
+	BitArray divisors
 	List<Long> primes = new ArrayList<Long>();
 	/**
 	 * 

@@ -16,7 +16,7 @@ public class ProjectEuler {
     public static void main(String[] args) {
 
     	long startTime = System.currentTimeMillis();
-    	Problem5 problem = new Problem5();
+    	Problem411 problem = new Problem411();
     	long endTime = System.currentTimeMillis();
     	
 
