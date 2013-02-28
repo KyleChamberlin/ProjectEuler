@@ -86,7 +86,7 @@ public class Problem11 {
 	
 	private void loadData(){
 		try{
-			FileInputStream fis = new FileInputStream("C:/GitCode/ProjectEuler/data/Problem11.txt");
+			FileInputStream fis = new FileInputStream("data/Problem11.txt");
 			Scanner scanner = new Scanner(fis);
 			
 			for(int y = 0; y < 20; y++)
