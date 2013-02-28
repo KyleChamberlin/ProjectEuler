@@ -16,12 +16,13 @@ public class ProjectEuler {
     public static void main(String[] args) {
 
     	long startTime = System.currentTimeMillis();
-    	Problem52 problem = new Problem52();
+    	Problem22 problem = new Problem22();
     	long endTime = System.currentTimeMillis();
     	
 
     	System.out.println(problem.getAnswer());
     	System.out.println((endTime - startTime) + " ms");
+
     
     }
     
