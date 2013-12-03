@@ -1,10 +1,10 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.utils;
 
-public class Fib {
+public class FibTest {
 	
 	double phi = 1.618033988749894848204586834365638117720309179805762862135448622705260462;
 	
-	public Fib(){
+	public FibTest(){
 	
 	}
 	

@@ -1,8 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package projectEuler;
+package com.kylechamberlin.projectEuler;
+
+import com.kylechamberlin.projectEuler.solutions.*;
+
 
 /**
  *
@@ -15,12 +14,14 @@ public class App {
      */
     public static void main(String[] args) {
 
+        Solution problem = new Problem1();
+
     	long startTime = System.currentTimeMillis();
-    	Problem22 problem = new Problem22();
+    	problem.solve();
     	long endTime = System.currentTimeMillis();
     	
 
-    	System.out.println(problem.getAnswer());
+    	System.out.println(problem.solution());
     	System.out.println((endTime - startTime) + " ms");
 
     

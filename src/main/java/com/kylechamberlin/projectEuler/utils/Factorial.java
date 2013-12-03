@@ -1,4 +1,4 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.utils;
 
 import java.math.BigInteger;
 

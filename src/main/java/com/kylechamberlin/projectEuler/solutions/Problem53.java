@@ -1,5 +1,7 @@
 package com.kylechamberlin.projectEuler.solutions;
 
+import com.kylechamberlin.projectEuler.utils.Factorial;
+
 import java.math.BigInteger;
 
 public class Problem53 {

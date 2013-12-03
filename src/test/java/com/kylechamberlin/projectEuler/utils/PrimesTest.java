@@ -1,8 +1,8 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.utils;
 
 import java.util.BitSet;
 
-public class Primes {
+public class PrimesTest {
 	
 	protected BitSet list;
 	protected int currentPrime;
@@ -10,7 +10,7 @@ public class Primes {
 	protected int limit;
 	
 	
-	public Primes(int pN){
+	public PrimesTest(int pN){
 		this.limit = pN;
 		list = primeSieve(limit);
 		this.currentPrime = 2;		

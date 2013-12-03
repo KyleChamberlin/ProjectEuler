@@ -1,5 +1,7 @@
 package com.kylechamberlin.projectEuler.solutions;
 
+import com.kylechamberlin.projectEuler.utils.Primes;
+
 public class Problem27 {
 	
 	int answer = 0;

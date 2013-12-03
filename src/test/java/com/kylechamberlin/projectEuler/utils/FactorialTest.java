@@ -1,8 +1,8 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.utils;
 
 import java.math.BigInteger;
 
-public class Factorial {
+public class FactorialTest {
 	
 	protected static BigInteger[] list;
 	protected int currentPrime;
@@ -10,7 +10,7 @@ public class Factorial {
 	protected int limit;
 	
 	
-	public Factorial(int pN){
+	public FactorialTest(int pN){
 		list = listFactorials(pN);		
 	}
 	
