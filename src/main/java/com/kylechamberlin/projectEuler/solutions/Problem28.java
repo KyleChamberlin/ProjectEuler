@@ -10,15 +10,12 @@
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
  */
 
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 public class Problem28 {
 
 	int answer = 1;
-	/**
-	 * 
-	 * @param args
-	 */
+
 	public Problem28(){
 		int add = 1;
 		for(int size = 3; size <= 1001; size+=2){

@@ -8,7 +8,7 @@ package projectEuler;
  *
  * @author kylec
  */
-public class ProjectEuler {
+public class App {
 
     /**
      * @param args the command line arguments

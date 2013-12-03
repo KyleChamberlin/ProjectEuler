@@ -8,7 +8,7 @@
  * What is the largest prime factor of the number 600851475143 ?
  */
 
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 import java.util.ArrayList;
 import java.util.List;

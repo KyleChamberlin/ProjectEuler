@@ -1,4 +1,5 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
+
 
 
 

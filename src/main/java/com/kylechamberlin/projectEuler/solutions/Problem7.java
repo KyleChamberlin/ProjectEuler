@@ -1,4 +1,4 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 public class Problem56 {
 	

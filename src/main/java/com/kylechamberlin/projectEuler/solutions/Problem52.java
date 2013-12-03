@@ -4,7 +4,7 @@
  * Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits.
  */
 
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 import java.util.Arrays;
 

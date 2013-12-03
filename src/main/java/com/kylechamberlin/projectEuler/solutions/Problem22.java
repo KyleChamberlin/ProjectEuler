@@ -10,7 +10,7 @@
  * What is the total of all the name scores in the file?
  */
 
-package projectEuler;
+package com.kylechamberlin.projectEuler.solutions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
