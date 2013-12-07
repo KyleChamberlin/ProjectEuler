@@ -10,7 +10,7 @@ public class Problem3 extends Solution{
     List<Long> primeFactors;
 
 	public List<Long> primeFactors(long number) {
-        List<Long> primeFactors = new ArrayList<>();
+        List<Long> primeFactors = new ArrayList<Long>();
 		for (long factor = 2; factor <= number; factor++) {
             if (areMultiples(factor, number)) {
                 primeFactors.add(factor);

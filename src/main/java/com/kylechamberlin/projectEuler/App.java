@@ -14,7 +14,7 @@ public class App {
      */
     public static void main(String[] args) {
 
-        Solution problem = new Problem1();
+        Solution problem = new Problem5();
 
     	long startTime = System.currentTimeMillis();
     	problem.solve();
