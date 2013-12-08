@@ -48,6 +48,11 @@ public class Problem4 extends Solution {
             digits[j] = (mod1/divisor);
             mod2 = mod1;
         }
+        return digits;
+    }
+
+    private int getDigitAt() {
+        return 0;
     }
 
     @Override
