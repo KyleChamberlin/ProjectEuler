@@ -1,34 +1,32 @@
 package com.kylechamberlin.projectEuler.solutions;
 
+public class Problem5 extends Solution {
 
-
-
-public class Problem5 {
-
-	long answer = 0L;
-	
-	/**
-	 * 
-	 * @param args
-	 */
-	public Problem5(){
-		long i = 20L;
-		while (answer == 0){
-			i +=20;
-			inner : for(int j = 19;j>=11;j--){
-				if(i%j != 0){
-					break inner;
-				}
-				if(j==11){
-					answer = i;
-				}
-			}
-		}
+	public void solve() {
+         answer = leastCommonMultipleOf2Through(20);
 	}
-	
-	public long getAnswer(){
-		return answer;
+
+    protected long leastCommonMultipleOf2Through(long a, long b) {
+        if ( a == 2L ) {
+            return leastCommonMultiple(2, b);
+        }
+        return  leastCommonMultipleOf2Through(a - 1, leastCommonMultiple(a, b));
+
+    }
+
+    protected long leastCommonMultipleOf2Through(long a) {
+
+        return leastCommonMultipleOf2Through(a,a);
+    }
+
+	protected long leastCommonMultiple(long a, long b) {
+		long larger = a>b?a:b;
+		long smaller = a>b?b:a;
+        long multiple = larger;
+
+		for (; (multiple % smaller) != 0L; multiple += larger);
+
+		return multiple;
 	}
-	
-	
+
 }
