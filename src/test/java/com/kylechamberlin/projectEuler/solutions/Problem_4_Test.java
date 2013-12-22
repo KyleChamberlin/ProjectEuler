@@ -18,7 +18,7 @@ public class Problem_4_Test {
 
     @Test
     public void palindrome9009() {
-            assertTrue(true); // TODO: write actual test.
+        assertTrue(problem4.isPalindrome(9009));
     }
 
     @After

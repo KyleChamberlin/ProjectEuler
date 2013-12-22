@@ -11,11 +11,9 @@ public class Problem5 extends Solution {
             return leastCommonMultiple(2, b);
         }
         return  leastCommonMultipleOf2Through(a - 1, leastCommonMultiple(a, b));
-
     }
 
     protected long leastCommonMultipleOf2Through(long a) {
-
         return leastCommonMultipleOf2Through(a,a);
     }
 
@@ -28,5 +26,4 @@ public class Problem5 extends Solution {
 
 		return multiple;
 	}
-
 }
